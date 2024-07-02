@@ -1,3 +1,43 @@
+# M5Atom-IR
+
+## 使い方
+
+### Wi-Fi設定
+
+ボタンを押しながらUSB接続。
+スマホなどで `m5atom-ir` に接続し，SSIDとパスワードを入力する。
+再起動する。
+
+### ウェブアプリ
+
+ウェブブラウザで `192.168.x.x` を開く。
+
+### コードの受信
+
+`curl -i http://192.168.x.x/messages`
+
+### コードの送信
+
+`curl -i http://192.168.x.x/messages -d 'message={"format":"raw","freq":38,"data":[910, 856,  1792, 1740,  1818, 830,  964, 830,  910, 854,  910, 858,  908, 1740,  1816, 834,  908, 858,  910, 1738,  930]}'`
+
+### LED オン
+
+`curl -i http://192.168.x.x/ledon`
+
+### LED オフ
+
+`curl -i http://192.168.x.x/ledoff`
+
+### Wi-Fi リセット
+
+`curl -i http://192.168.x.x/wifireset`
+
+---
+
+以下オリジナルのREADME
+
+---
+
 # M5StickC-IR
 
 M5StickCに内蔵された赤外線LEDを使用して家電のリモコンとして使えるようにします。
@@ -44,5 +84,3 @@ http://m5.linclip.com/ir/
 * https://github.com/interactive-matter/aJson （要パッチ https://gitlab.com/xarduino/lightsw/blob/master/patch/ajson-void-flush.patch ）
 
 * https://github.com/SensorsIot/Arduino-IRremote
-
-
